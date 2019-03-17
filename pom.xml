@@ -5,7 +5,9 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>acceptance-test</module>
-	</modules>
+		<module>jpa-adapter</module>
+		<module>domain</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -45,6 +47,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.16</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

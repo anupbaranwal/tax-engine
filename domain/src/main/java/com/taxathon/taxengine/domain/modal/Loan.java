@@ -1,10 +1,13 @@
 package com.taxathon.taxengine.domain.modal;
 
+import lombok.Data;
+
+@Data
 public class Loan {
 
-    private Double fees;
+    private Double fee;
     private Double vat;
     private String lenderName;
-    private String percentageShare;
+    private int percentageShare;
     private String dealType;
 }

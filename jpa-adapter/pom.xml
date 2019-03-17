@@ -9,21 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>acceptance-test</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>jpa-adapter</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.taxathon</groupId>
             <artifactId>domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.taxathon</groupId>
-            <artifactId>jpa-adapter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
+
 
 </project>
