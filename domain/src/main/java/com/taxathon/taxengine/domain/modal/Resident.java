@@ -1,6 +1,7 @@
 package com.taxathon.taxengine.domain.modal;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 
 @AllArgsConstructor

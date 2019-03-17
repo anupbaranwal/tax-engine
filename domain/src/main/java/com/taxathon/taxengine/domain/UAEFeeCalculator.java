@@ -4,25 +4,24 @@ import com.taxathon.taxengine.domain.infra.FxRateCalculationRepository;
 import com.taxathon.taxengine.domain.modal.Deal;
 import com.taxathon.taxengine.domain.modal.DealType;
 import com.taxathon.taxengine.domain.modal.Loan;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class UAEFeeCalculator implements FeeCalculator {
 
-    private FxRateCalculationRepository fxRateCalculator;
-    private Loan loan;
-    private Deal deal;
+    @Autowired
+    private FxRateCalculationRepository fxRateCalculationAdapter;
 
     public UAEFeeCalculator(){}
 
-    public UAEFeeCalculator(Deal deal, FxRateCalculationRepository fxRateCalculator) {
-        this.fxRateCalculator = fxRateCalculator;
-        this.deal = deal;
+    public UAEFeeCalculator(FxRateCalculationRepository fxRateCalculationAdapter) {
+        this.fxRateCalculationAdapter = fxRateCalculationAdapter;
     }
 
 
     @Override
-    public Loan calculate() {
-        loan = new Loan();
-        double fxRate = fxRateCalculator.getRate(deal.getFeeType(), deal.getDateOfDeal());
+    public Loan calculate(Deal deal) {
+        Loan loan = new Loan();
+        double fxRate = fxRateCalculationAdapter.getRate(deal.getFeeType(), deal.getDateOfDeal());
         if(DealType.BILATERAL.getDealType().equalsIgnoreCase(deal.getDealType())) {
             loan.setFee(deal.getAmount());
             loan.setDealType(DealType.BILATERAL.getDealType());

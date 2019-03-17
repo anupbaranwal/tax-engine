@@ -4,9 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
+		<module>bootstrap</module>
 		<module>acceptance-test</module>
 		<module>jpa-adapter</module>
 		<module>domain</module>
+        <module>rest-adapter</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -55,14 +57,5 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
